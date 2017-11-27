@@ -5,7 +5,7 @@ require_once './Classes/PHPExcel.php';
 // Crea un nuevo objeto PHPExcel
 $objPHPExcel = new PHPExcel();
 
-// Establecer propiedades
+// Establecer propiedades. No son totes precis
 $objPHPExcel->getProperties()
 ->setCreator("VCatala")
 ->setLastModifiedBy("Vcatala")
@@ -15,7 +15,7 @@ $objPHPExcel->getProperties()
 ->setKeywords("Excel Office 2007 openxml php")
 ->setCategory("Pruebas de Excel");
 
-// Agregar Informacion
+// Agregar Informacion. Tambe es pot clavar dins de un for, while, foreach...
 $objPHPExcel->setActiveSheetIndex(0)
 ->setCellValue('A1', 'Ana aço es una prova del codi funcionant')
 ->setCellValue('A2', 'Valor 1')
@@ -25,10 +25,10 @@ $objPHPExcel->setActiveSheetIndex(0)
 ->setCellValue('B3', '7')
 ->setCellValue('C3', '=sum(A3:B3)');
 
-// Renombrar Hoja
+// Renombrar Hoja. No es precis fer-ho
 $objPHPExcel->getActiveSheet()->setTitle('Prueba TSI');
 
-// Establecer la hoja activa, para que cuando se abra el documento se muestre primero.
+// Establecer la hoja activa, para que cuando se abra el documento se muestre primero. Si no heu poses no funciona.
 $objPHPExcel->setActiveSheetIndex(0);
 
 // Se modifican los encabezados del HTTP para indicar que se envia un archivo de Excel.
